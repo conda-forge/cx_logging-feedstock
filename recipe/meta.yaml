@@ -8,11 +8,14 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: ba8a7465facf7b98d8f494030fb481a2e8aeee29dc191e10383bb54ed42bdb34
+  patches:
+    - add-include.patch
 
 build:
-  number: 2
+  number: 3
   skip: True  # [not win]
-  script: "{{ PYTHON }} setup.py install"
+  script:
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -20,12 +23,16 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
   run:
     - python
 
 test:
   imports:
     - cx_Logging
+  commands:
+    - echo CONDA_PREFIX=%CONDA_PREFIX%
+    - cd %CONDA_PREFIX% && dir cx_Logging*.* /s
 
 about:
   home: https://github.com/anthony-tuininga/cx_Logging
