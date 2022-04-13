@@ -12,13 +12,16 @@ source:
     - add-include.patch
 
 build:
-  number: 3
+  number: 4
   skip: True  # [not win]
   script:
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
+    - python
+    - pip
+    - setuptools
     - {{ compiler('c') }}
   host:
     - python
