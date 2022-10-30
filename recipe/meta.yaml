@@ -10,9 +10,11 @@ source:
   sha256: ba8a7465facf7b98d8f494030fb481a2e8aeee29dc191e10383bb54ed42bdb34
   patches:
     - add-include.patch
+    - pr6.patch
+    - pr7.patch
 
 build:
-  number: 4
+  number: 5
   skip: True  # [not win]
   script:
     - {{ PYTHON }} -m pip install . -vv
