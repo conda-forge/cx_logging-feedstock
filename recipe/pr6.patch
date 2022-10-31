@@ -1,0 +1,32 @@
+diff --git a/src/cx_Logging.c b/src/cx_Logging.c
+index 377bd6e..891c523 100644
+--- a/src/cx_Logging.c
++++ b/src/cx_Logging.c
+@@ -88,7 +88,15 @@ static int LoggingState_OpenFileForWriting(
+     }
+ 
+     // open file for writing
++#ifdef MS_WINDOWS
++    if (state->reuseExistingFiles)
++        state->fp = fopen(state->fileName, "w");
++    else
++        state->fp = _fsopen(state->fileName, "w", _SH_DENYWR);
++#else
+     state->fp = fopen(state->fileName, "w");
++#endif
++
+     if (!state->fp) {
+         sprintf(state->exceptionInfo.message,
+                 "Failed to open file %s: OS error %d", state->fileName, errno);
+diff --git a/src/cx_Logging.h b/src/cx_Logging.h
+index 09dfb3e..48b151e 100644
+--- a/src/cx_Logging.h
++++ b/src/cx_Logging.h
+@@ -8,6 +8,7 @@
+ 
+ // define platform specific variables
+ #ifdef MS_WINDOWS
++    #include <share.h>
+     #include <windows.h>
+     #define LOCK_TYPE CRITICAL_SECTION
+     #ifdef __GNUC__
