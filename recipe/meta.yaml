@@ -1,5 +1,5 @@
 {% set name = "cx_Logging" %}
-{% set version = "3.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ba8a7465facf7b98d8f494030fb481a2e8aeee29dc191e10383bb54ed42bdb34
-  patches:
-    - add-include.patch
-    - pr6.patch
-    - pr7.patch
+  sha256: 8a06834d8527aa904a68b25c9c1a5fa09f0dfdc94dbd9f86b81cd8d2f7a0e487
 
 build:
-  number: 6
+  number: 0
   skip: True  # [not win]
   script:
     - {{ PYTHON }} -m pip install . -vv
