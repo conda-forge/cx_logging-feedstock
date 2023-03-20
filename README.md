@@ -1,11 +1,11 @@
-About cx_logging
-================
+About cx_logging-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cx_logging-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/anthony-tuininga/cx_Logging
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cx_logging-feedstock/blob/main/LICENSE.txt)
 
 Summary: Python and C interfaces for logging
 
