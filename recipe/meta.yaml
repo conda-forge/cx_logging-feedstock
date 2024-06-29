@@ -10,17 +10,15 @@ source:
   sha256: bdbad6d2e6a0cc5bef962a34d7aa1232e88ea9f3541d6e2881675b5e7eab5502
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not win]
-  script:
-    - {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - python
-    - pip
-    - setuptools
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
@@ -34,13 +32,14 @@ test:
   commands:
     - echo CONDA_PREFIX=%CONDA_PREFIX%
     - cd %CONDA_PREFIX% && dir cx_Logging*.* /s
+    - pip check
 
 about:
   home: https://github.com/anthony-tuininga/cx_Logging
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Python and C interfaces for logging'
+  summary: Python and C interfaces for logging
 
 extra:
   recipe-maintainers:
