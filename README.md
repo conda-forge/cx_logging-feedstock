@@ -55,10 +55,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_python3.9.____cpython</td>
+              <td>win_64_python3.14.____cp314</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15027&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cx_logging-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cx_logging-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.14.____cp314" alt="variant">
                 </a>
               </td>
             </tr>
@@ -74,7 +74,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-cx_logging-green.svg)](https://anaconda.org/conda-forge/cx_logging) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cx_logging.svg)](https://anaconda.org/conda-forge/cx_logging) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cx_logging.svg)](https://anaconda.org/conda-forge/cx_logging) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cx_logging.svg)](https://anaconda.org/conda-forge/cx_logging) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cx__logging-green.svg)](https://anaconda.org/conda-forge/cx_logging) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cx_logging.svg)](https://anaconda.org/conda-forge/cx_logging) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cx_logging.svg)](https://anaconda.org/conda-forge/cx_logging) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cx_logging.svg)](https://anaconda.org/conda-forge/cx_logging) |
 
 Installing cx_logging
 =====================
